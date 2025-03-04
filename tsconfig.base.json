@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@shtavcom/resource-utils": ["libs/resource-utils/src/index.ts"],
       "@shtavcom/tables": ["libs/tables/src/index.ts"]
     }
   },
