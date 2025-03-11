@@ -1,2 +1,10 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="main">
+  <div class="shadow-container">
+    <h4>shadow</h4>
+    <div *ngFor="let item of anArray" class="with-shadow">S</div>
+  </div>
+  <div class="shadow-container">
+    <h4>border</h4>
+    <div *ngFor="let item of anArray" class="with-border">B</div>
+  </div>
+</div>

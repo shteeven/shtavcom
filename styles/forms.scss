@@ -1,0 +1,48 @@
+/**
+ * @author Steven Barnhurst
+ Form field styles structuring
+ Assumptions: The form field styles are written in a way that assumes this
+ hierarchy:
+ form-field > form-field-label & form-field-input & form-field-hint & form-field-error
+ w/ form-field receiving the states of the form field, such as disabled, readonly,
+ active, and error, and then the child elements having the styles applied based on
+ those states.
+ Whenever possible, the child classes should use css variables that do not change
+ using the child class name and the parent state selector, but rather, the variables
+ should be set within .form-field.<some-state> {...}.
+ */
+
+.form-field {
+  --form--input--background: var(--forms--input--background--default);
+  --forms--input--outline: var(--forms--input--outline--default);
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.form-field-input {
+  background: var(--form--input--background);
+  border: solid 1px var(--forms--input--outline);
+  border-radius: 0.25rem;
+}
+
+.form-field {
+  &.disabled, &.readonly {
+    --form--input--background: var(--forms--input--outline--disabled);
+  }
+}
+
+.form-field:not(.disabled):not(.readonly) {
+  .form-field-input {
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      --forms--input--outline: var(--forms--input--outline--active);
+    }
+    &.checked {
+      color: var(--text-color--contrast);
+      --form--input--background: var(--forms--input--outline--active);
+    }
+  }
+}
