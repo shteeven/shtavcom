@@ -1,0 +1,16 @@
+body {
+  // base colors
+  // Typography
+  --text-color--default: rgba(25, 25, 25, 1);
+  --text-color--contrast: rgba(255, 255, 255, 1);
+
+  // Forms
+  // Forms - Inputs - Backgrounds
+  --forms--input--background--default: rgba(255, 255, 255, 1);
+  --forms--input--background--disabled: rgba(230, 230, 230, 1);
+
+  // Forms - Inputs - Outlines
+  --forms--input--outline--default: rgba(220, 220, 220, 1);
+  --forms--input--outline--disabled: rgba(200, 200, 200, 1);
+  --forms--input--outline--active: rgba(130, 60, 250, 1);
+}

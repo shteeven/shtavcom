@@ -2,7 +2,7 @@
   "name": "tables",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/tables/src",
-  "prefix": "lib",
+  "prefix": "shtav",
   "projectType": "library",
   "tags": [],
   "targets": {

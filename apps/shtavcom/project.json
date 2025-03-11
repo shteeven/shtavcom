@@ -22,7 +22,7 @@
             "input": "apps/shtavcom/public"
           }
         ],
-        "styles": ["apps/shtavcom/src/styles.scss"],
+        "styles": ["styles/styles.scss"],
         "scripts": []
       },
       "configurations": {

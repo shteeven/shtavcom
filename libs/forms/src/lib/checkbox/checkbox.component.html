@@ -1,0 +1,21 @@
+<label
+  tabindex="0"
+  class="form-field checkbox-container"
+  [class.disabled]="disabled"
+  (keydown.space)="$event.stopPropagation()"
+  (click)="$event.stopPropagation()"
+>
+  <input
+    [disabled]="disabled"
+    class="checkbox-input"
+    tabindex="-1"
+    type="checkbox"
+    [ngModel]="checked"
+    (click)="onModelChange(!checked, $event)"
+  />
+  <shtav-pseudo-checkbox
+    role="checkbox"
+    [checked]="checked"
+  ></shtav-pseudo-checkbox>
+  <span class="pl-2 label-lg label-text"><ng-content></ng-content></span>
+</label>
