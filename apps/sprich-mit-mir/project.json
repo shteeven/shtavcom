@@ -22,7 +22,7 @@
             "input": "apps/sprich-mit-mir/public"
           }
         ],
-        "styles": ["apps/sprich-mit-mir/src/styles.scss"],
+        "styles": ["styles/styles.scss", "apps/sprich-mit-mir/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
