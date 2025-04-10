@@ -1,1 +1,18 @@
-<p>flashcards works!</p>
+<div class="flashcard-container">
+  <ul class="card-list">
+    <li class="grid" *ngFor="let card of flashcards">
+      <button class="card-selector" (click)="onCardClick(card)">{{ card.front }}</button>
+    </li>
+  </ul>
+
+  <div class="card-display" *ngIf="selectedCard">
+    <div class="card" [class.flipped]="isFlipped">
+      <button class="card-face front" (click)="isFlipped = true">
+        {{ selectedCard.front }}
+      </button>
+      <button class="card-face back" (click)="isFlipped = false">
+        {{ selectedCard.back }}
+      </button>
+    </div>
+  </div>
+</div>
