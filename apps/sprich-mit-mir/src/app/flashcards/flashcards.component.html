@@ -1,7 +1,12 @@
 <div class="flashcard-container">
   <ul class="card-list">
     <li class="grid" *ngFor="let card of flashcards">
-      <button class="card-selector" (click)="onCardClick(card)">{{ card.front }}</button>
+      <button class="card-selector"
+              [class.selected]="selectedCard?.id === card.id"
+              (click)="onCardClick(card)">
+        <ng-icon [name]="getMasteryIcon(card.mastery)" class="mastery-icon"></ng-icon>
+        {{ card.front }}
+      </button>
     </li>
   </ul>
 
@@ -12,6 +17,20 @@
       </button>
       <button class="card-face back" (click)="isFlipped = false">
         {{ selectedCard.back }}
+      </button>
+    </div>
+    <div class="mastery-controls">
+      <button class="mastery-btn"
+              [class.active]="selectedCard.mastery === Mastery.LEARNING"
+              (click)="updateMastery(Mastery.LEARNING)">
+        <ng-icon name="heroAcademicCap"></ng-icon>
+        Learning
+      </button>
+      <button class="mastery-btn"
+              [class.active]="selectedCard.mastery === Mastery.MASTERED"
+              (click)="updateMastery(Mastery.MASTERED)">
+        <ng-icon name="heroCheck"></ng-icon>
+        Mastered
       </button>
     </div>
   </div>

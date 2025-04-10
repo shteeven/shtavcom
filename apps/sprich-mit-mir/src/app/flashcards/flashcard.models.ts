@@ -1,3 +1,9 @@
+export enum Mastery {
+  NEW = 0,
+  LEARNING = 1,
+  MASTERED = 2,
+}
+
 export interface Flashcard {
   id: string;
   front: string;
@@ -9,4 +15,5 @@ export interface Flashcard {
   modifiedBy: string;
   createdAt: Date;
   modifiedAt: Date;
+  mastery: Mastery;
 }

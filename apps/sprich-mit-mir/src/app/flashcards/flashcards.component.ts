@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { Flashcard } from './flashcard.models';
+import { Flashcard, Mastery } from './flashcard.models';
 import { NgFor, NgIf } from '@angular/common';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { 
+  heroCheck, 
+  heroAcademicCap,
+  heroQuestionMarkCircle 
+} from '@ng-icons/heroicons/outline';
 
 const dummyCards: Flashcard[] = [
   {
@@ -13,6 +19,7 @@ const dummyCards: Flashcard[] = [
     modifiedBy: 'system',
     createdAt: new Date('2025-04-10'),
     modifiedAt: new Date('2025-04-10'),
+    mastery: Mastery.NEW,
   },
   {
     id: '2',
@@ -24,6 +31,7 @@ const dummyCards: Flashcard[] = [
     modifiedBy: 'system',
     createdAt: new Date('2025-04-10'),
     modifiedAt: new Date('2025-04-10'),
+    mastery: Mastery.NEW,
   },
   {
     id: '3',
@@ -35,6 +43,7 @@ const dummyCards: Flashcard[] = [
     modifiedBy: 'system',
     createdAt: new Date('2025-04-10'),
     modifiedAt: new Date('2025-04-10'),
+    mastery: Mastery.NEW,
   },
   {
     id: '4',
@@ -46,6 +55,7 @@ const dummyCards: Flashcard[] = [
     modifiedBy: 'system',
     createdAt: new Date('2025-04-10'),
     modifiedAt: new Date('2025-04-10'),
+    mastery: Mastery.NEW,
   },
   {
     id: '5',
@@ -57,6 +67,7 @@ const dummyCards: Flashcard[] = [
     modifiedBy: 'system',
     createdAt: new Date('2025-04-10'),
     modifiedAt: new Date('2025-04-10'),
+    mastery: Mastery.NEW,
   },
 ];
 
@@ -64,15 +75,47 @@ const dummyCards: Flashcard[] = [
   selector: 'app-flashcards',
   templateUrl: './flashcards.component.html',
   styleUrls: ['./flashcards.component.css'],
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, NgIcon],
+  providers: [provideIcons({ 
+    heroCheck, 
+    heroAcademicCap,
+    heroQuestionMarkCircle 
+  })],
 })
 export class FlashcardsComponent {
   flashcards: Flashcard[] = dummyCards;
   selectedCard = dummyCards[0];
   isFlipped = false;
+  readonly Mastery = Mastery;
+
+  getMasteryIcon(mastery: Mastery): string {
+    switch (mastery) {
+      case Mastery.MASTERED:
+        return 'heroCheck';
+      case Mastery.LEARNING:
+        return 'heroAcademicCap';
+      default:
+        return 'heroQuestionMarkCircle';
+    }
+  }
 
   onCardClick(card: Flashcard): void {
     this.selectedCard = card;
     this.isFlipped = false;
+  }
+
+  updateMastery(mastery: Mastery): void {
+    const index = this.flashcards.findIndex(
+      (card) => card.id === this.selectedCard.id
+    );
+    if (index !== -1) {
+      this.flashcards[index] = {
+        ...this.flashcards[index],
+        mastery,
+        modifiedAt: new Date(),
+        modifiedBy: 'user',
+      };
+      this.selectedCard = this.flashcards[index];
+    }
   }
 }
