@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Flashcard, Mastery } from './flashcard.models';
 import { NgFor, NgIf } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { 
-  heroCheck, 
+import {
+  heroCheck,
   heroAcademicCap,
-  heroQuestionMarkCircle 
+  heroQuestionMarkCircle,
 } from '@ng-icons/heroicons/outline';
 
 const dummyCards: Flashcard[] = [
@@ -76,11 +76,13 @@ const dummyCards: Flashcard[] = [
   templateUrl: './flashcards.component.html',
   styleUrls: ['./flashcards.component.css'],
   imports: [NgFor, NgIf, NgIcon],
-  providers: [provideIcons({ 
-    heroCheck, 
-    heroAcademicCap,
-    heroQuestionMarkCircle 
-  })],
+  providers: [
+    provideIcons({
+      heroCheck,
+      heroAcademicCap,
+      heroQuestionMarkCircle,
+    }),
+  ],
 })
 export class FlashcardsComponent {
   flashcards: Flashcard[] = dummyCards;
