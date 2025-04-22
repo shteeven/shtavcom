@@ -2,7 +2,7 @@
   <ul class="card-list">
     <li class="grid" *ngFor="let card of flashcards">
       <button class="card-selector"
-              [class.selected]="selectedCard?.id === card.id"
+              [class.selected]="selectedCard.id === card.id"
               (click)="onCardClick(card)">
         <ng-icon [name]="getMasteryIcon(card.mastery)" class="mastery-icon"></ng-icon>
         {{ card.front }}
