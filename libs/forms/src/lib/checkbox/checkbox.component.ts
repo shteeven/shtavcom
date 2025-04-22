@@ -14,6 +14,11 @@ import {
 import { DISABLEABLE } from '../utils/disableable.model';
 import { PseudoCheckboxComponent } from '../pseudo-checkbox/pseudo-checkbox.component';
 
+interface CheckboxChange {
+  checked: boolean;
+  event: MouseEvent;
+}
+
 @Component({
   selector: 'shtav-checkbox-field',
   templateUrl: 'checkbox.component.html',
@@ -33,7 +38,7 @@ import { PseudoCheckboxComponent } from '../pseudo-checkbox/pseudo-checkbox.comp
 })
 export class CheckboxComponent implements ControlValueAccessor {
   @Output() readonly valueChange = new EventEmitter<boolean>();
-  @Output() readonly changeEvent = new EventEmitter<any>();
+  @Output() readonly changeEvent = new EventEmitter<CheckboxChange>();
 
   @HostBinding('attr.checked')
   @Input()
@@ -57,7 +62,7 @@ export class CheckboxComponent implements ControlValueAccessor {
     this.checked = checked;
   }
 
-  onModelChange(e: boolean, event: any) {
+  onModelChange(e: boolean, event: MouseEvent) {
     event.stopPropagation();
     // Step 5a: bind the changes to the local value
     this.checked = e;
