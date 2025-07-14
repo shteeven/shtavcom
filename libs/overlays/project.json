@@ -2,7 +2,7 @@
   "name": "overlays",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/overlays/src",
-  "prefix": "lib",
+  "prefix": "shtav",
   "projectType": "library",
   "tags": [],
   "targets": {

@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url(fonts/Roboto-Thin.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(fonts/Roboto-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+
+body {
+  font-style: normal;
+}
+
+// START - DISPLAYS
+.display-lg,
+.display-md,
+.display-sm {
+  font-weight: 400;
+}
+
+.display-lg {
+  font-size: 57px;
+  line-height: 4rem;
+}
+
+.display-md {
+  font-size: 45px;
+  line-height: 52px;
+}
+
+.display-sm {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+// END - DISPLAYS
+
+// START - HEADLINES
+.headline-lg,
+.headline-md,
+.headline-sm {
+  font-weight: 500;
+}
+
+.headline-lg {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.headline-md {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+.headline-sm {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+// END - HEADLINES
+
+// START - TITLES
+.title-lg,
+.title-md,
+.title-sm {
+  letter-spacing: 0.2px;
+}
+
+.title-lg,
+.title-md {
+  font-weight: 500;
+}
+
+.title-lg {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.title-md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.title-sm {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+// END - TITLES
+
+// START - LABELS
+.label-lg,
+.label-md,
+.label-sm,
+.label-xs {
+  font-weight: 500;
+  letter-spacing: 0.0125rem;
+}
+
+.label-lg {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.label-md {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.label-sm {
+  font-size: 11px;
+  line-height: 1rem;
+}
+
+.label-xs {
+  font-size: 10px;
+  line-height: 0.875rem;
+  letter-spacing: 0.5px;
+}
+// END - LABELS
+
+// START - BODIES
+.body-lg,
+.body-md,
+.body-sm {
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.body-lg {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.body-md {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.body-sm {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+// END - BODIES
+
+// Used by TextOverflowComponent
+.text-no-overflow {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

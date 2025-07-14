@@ -1,7 +1,7 @@
 import { InjectionToken } from '@angular/core';
 
 export class Disableable {
-  isDisabled?: boolean;
+  disabled?: boolean;
 }
 
 export const DISABLEABLE = new InjectionToken<Disableable>('DISABLEABLE');

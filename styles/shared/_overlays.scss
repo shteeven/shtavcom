@@ -1,0 +1,29 @@
+@use '@angular/cdk' as cdk;
+
+@include cdk.overlay();
+
+// Add custom styles here
+.dialog-panel {
+  min-width: 400px;
+}
+
+.overflow-bottom-border {
+  // Adds a bottom border ONLY if the element has overflowing content
+  position: relative;
+}
+.overflow-bottom-border::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #e0e0e0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.overflow-bottom-border.is-overflowing::after {
+  opacity: 1;
+}
