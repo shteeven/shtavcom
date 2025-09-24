@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MyComponent } from './my.component';
+import { LiquidGlassDemoComponent } from './interesting-things/liquid-glass/liquid-glass-demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, MyComponent],
+  imports: [RouterModule, MyComponent, LiquidGlassDemoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
