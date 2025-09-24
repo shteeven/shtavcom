@@ -1,13 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgForOf } from '@angular/common';
+import { MyComponent } from './my.component';
 
 @Component({
-  imports: [RouterModule, NgForOf],
   selector: 'app-root',
+  imports: [RouterModule, MyComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  anArray = new Array(1);
+  title = 'My App';
 }

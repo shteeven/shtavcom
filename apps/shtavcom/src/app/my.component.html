@@ -1,0 +1,44 @@
+<h3>Angular Material Autocomplete Multiselect with Chips</h3>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div>
+  <mat-form-field class="user-chip-list">
+    <mat-label>User names</mat-label>
+    <mat-chip-grid #chipGrid>
+      @for (name of namesAsArr; track $index) {
+        <mat-chip-row (removed)="remove(name)">
+          {{name}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      }
+    </mat-chip-grid> 
+    
+    <input type="text" matInput
+      placeholder="Select a user"  
+      [matChipInputFor]="chipGrid"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"
+      formControlName="name" 
+      #nameInput
+      [matAutocomplete]="autoRef"> 
+
+    <mat-autocomplete #autoRef="matAutocomplete" (optionSelected)="selected($event); nameInput.value = ''">
+      @for (user of filteredUsers$ | async; track user.id) {
+         <mat-option [value]="user">  {{user.name}}  </mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  @if(namesAsArr.length === 0) {
+    <p style="color:red">  User names required. </p>
+  }
+  </div><br/>
+  <div>
+  <mat-form-field class="team">
+    <input type="text" placeholder="Team name" matInput formControlName="team">
+  </mat-form-field>
+  </div>
+  <br/><br/>
+  <button mat-raised-button>Submit</button>
+  <button mat-raised-button type="button" (click)="resetForm()">Reset</button>
+</form> 
