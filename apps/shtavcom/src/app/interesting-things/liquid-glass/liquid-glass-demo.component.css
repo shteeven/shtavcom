@@ -1,0 +1,66 @@
+:host {
+  background: black;
+  color: white;
+  padding-bottom: 50vh;
+}
+
+img {
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  animation: move 5s linear infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(10vh);
+  }
+  10% {
+    transform: translateY(4vh);
+  }
+  20% {
+    transform: translateY(0vh);
+  }
+  30% {
+    transform: translateY(-3.5vh);
+  }
+  40% {
+    transform: translateY(-5.75vh);
+  }
+  50% {
+    transform: translateY(-7.25vh);
+  }
+  60% {
+    transform: translateY(-8.25vh);
+  }
+  70% {
+    transform: translateY(-8.9vh);
+  }
+  80% {
+    transform: translateY(-9.45vh);
+  }
+  90% {
+    transform: translateY(-9.85vh);
+  }
+  100% {
+    transform: translateY(-10vh);
+  }
+}
+
+h1 {
+  font-size: 5rem;
+  display: block;
+  font-family: sans-serif;
+}

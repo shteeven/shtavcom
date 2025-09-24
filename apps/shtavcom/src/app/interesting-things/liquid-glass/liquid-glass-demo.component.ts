@@ -32,8 +32,8 @@ export class LiquidGlassDemoComponent {
     {
       width: 200,
       height: 200,
-      radius: 100,
-      depth: 20,
+      radius: 20,
+      depth: 10,
       blur: 1,
       chromaticAberration: 1,
     },
